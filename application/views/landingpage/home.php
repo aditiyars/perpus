@@ -6,9 +6,13 @@
   <title>Perpustakaan Daerah</title>
   <link rel="stylesheet" href="<?= base_url();?>assets_style/assets/css/landingpage.css">
   <link rel="stylesheet" href="<?= base_url();?>assets_style/assets/css/app.css">
+  <link href="<?= base_url();?>assets_style/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="<?= base_url();?>assets_style/assets/fontawesome/css/brands.css" rel="stylesheet">
+  <link href="<?= base_url();?>assets_style/assets/fontawesome/css/solid.css" rel="stylesheet">
+  <script defer src="<?= base_url();?>assets_style/assets/scripts/landingpage.js"></script>
 </head>
 
-<body>
+<body class="bg-color-one">
   <div class="container">
     <nav class="navbar bg-color-three">
       <div class="brand">
@@ -16,11 +20,9 @@
       </div>
       <div class="nav-list">
         <ul class="nav-items">
-          <li class="nav-item"><a href="<?= base_url()?>dashboard" class="nav-link">Dashboard</a></li>
-					<!-- <li class="nav-item"><a href="#" class="nav-link">Library</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Member</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li> -->
+          <li class="nav-item"><a class="nav-link" id="scrolled-nav-link" data-target="top-book">Most Popular Books</a></li>
+          <li class="nav-item"><a class="nav-link" id="scrolled-nav-link" data-target="footer">Contact</a></li>
+          <li class="nav-item"><a href="<?= base_url()?>dashboard" class="nav-link" id="btn-nav-link">Dashboard</a></li>
         </ul>
       </div>
     </nav>
@@ -35,12 +37,12 @@
             <h2 class="jumbo-text-subtitle">Sistem Informasi perpustakaan daerah</h2>
 			<h3>Jam operasional : 09:00 - 17:00</h3>
           </div>
-          <button class="btn bg-color-four"><a href="login" class="btn-link">Get Started</a></button>
+          <a href="login" class="btn-link btn bg-color-four">Get Started</a>
         </div>
       </section>
 
       <section class="main-section" id="top-book" style="margin:10px 30px;">
-        <div class="section-container bg-color-one">
+        <div class="section-container">
           <h1 class="section-title" style="margin-top:20px;">Most Popular Book</h1>
           <div class="card-collections">
             <div class="card">
@@ -106,8 +108,34 @@
         </div>
       </section>
     </main>
-    <footer class="footer bg-color-two">
-      <h4>Copyrigt &copy; 2023. All Rights Reserved</h4>
+    <footer class="footer bg-color-three" id="footer">
+      <div class="footer-section" id="social-media">
+        <a href="https://id-id.facebook.com/" class="social-media-link social-media-item bg-color-four">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/" class="social-media-link social-media-item bg-color-four">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/" class="social-media-link social-media-item bg-color-four">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <div class="footer-section" id="address">
+        <p>2PFG+J49, Lorok Pakjo, Kec.Ilir Barat. I, Kota Palembang, Sumatera Selatan, Indonesia</p>
+      </div>
+      <div class="footer-section" id="contact">
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <p>+62 895 1122 33344</p>
+        </div>
+        <div class="contact-item">
+          <i class="fa-regular fa-envelope"></i>
+          <p>infopusda@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-section" id="copyright">
+        <h4>Copyrigt &copy; 2023. All Rights Reserved</h4>
+      </div>
     </footer>
   </div>
 </body>

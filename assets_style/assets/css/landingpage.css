@@ -7,6 +7,11 @@
   font-family: MontserratRegular;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .container {
   width: 100%;
   position: relative;
@@ -23,12 +28,21 @@
 
 .nav-items {
   display: flex;
-  gap: 40px;
+  gap: 25px;
   list-style: none;
 }
 
 .nav-link {
   text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: white;
+}
+
+#btn-nav-link {
   color: white;
   padding: 15px;
   border-radius: 7px;
@@ -38,11 +52,12 @@
 .main-section {
   min-height: 80vh;
   padding: 20px;
-	border-radius:0px 0px 0px 85px;
+  border-radius: 0px 0px 0px 85px;
 }
 
 #jumbotron {
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -99,16 +114,16 @@
 }
 
 #top-book {
-  padding:0;
+  margin-top: 30px;
 }
 
-#section-container {
+.section-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
   padding-top: 30px;
   width: 100%;
-  gap: 30px;
+  gap: 10px;
 }
 
 .section-title {
@@ -121,8 +136,8 @@
   grid-template-columns: repeat(3, minmax(0, 300px));
   gap: 50px;
   justify-content: center;
-	padding:50px;
-	margin:0px 15px;
+  padding: 50px;
+  margin: 0px 15px;
 }
 
 .card {
@@ -166,9 +181,9 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-	padding : 10px;
-	text-align:center;
-	opacity: 0.8;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.8;
 }
 
 /* .card-description {
@@ -189,7 +204,48 @@
 
 .footer {
   padding: 20px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#social-media {
+  gap: 20px;
+}
+
+.social-media-item {
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+}
+
+.social-media-link {
+  font-size: 20px;
+  color: white;
+}
+
+#contact {
+  gap: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#copyright {
+  margin-top: 40px;
+  font-size: 12px;
 }

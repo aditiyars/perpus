@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Telepon</label>
-                                    <input id="uintTextBox" class="form-control" name="telepon" required="required" placeholder="Contoh : 089618173609">
+                                    <input id="uintTextBox" class="form-control" name="telepon" required="required" placeholder="Contoh : 0895xxxxxxx90">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>
