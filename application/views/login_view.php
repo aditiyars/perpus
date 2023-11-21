@@ -53,9 +53,14 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="password" name="pass" placeholder="Password">
                                         </div>
-                                        <button class="btn btn-primary bg-color-four btn-user btn-block" type="submit">
-                                            Login
-										</button>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary bg-color-four btn-user btn-block " type="submit">
+                                                Login
+                                            </button>
+                                        </div>
+										<div class="form-group">
+											<a href="<?= base_url();?>" class="btn btn-primary form-control" role="button " >Back to Home</a>
+										</div>
                                     </form>
                                 </div>
                             </div>

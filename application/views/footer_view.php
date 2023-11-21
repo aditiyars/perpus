@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="clearfix"></div>
-<footer class="main-footer" style="background-color:#EAD7BB;">
+<footer class="main-footer" style="background-color:#BCA37F;">
     <div id="mycredit"><strong> Copyright &copy; <?php echo date('Y');?> Sistem Informasi Perpustakaan Daerah
     </strong> All rights</strong>
     <div class="pull-right">

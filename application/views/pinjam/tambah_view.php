@@ -89,7 +89,7 @@
 										<td>Data Buku</td>
 										<td>:</td>
 										<td>
-											<!-- <div id="result_tunggu_buku"> <p style="color:red">* Belum Ada Hasil</p></div> -->
+											<div id="result_tunggu_buku"> <p style="color:red">* Belum Ada Hasil</p></div>
 											<div id="result_buku"></div>
 										</td>
 									</tr>
@@ -122,7 +122,10 @@
 		<thead>
 			<tr>
 				<th>No</th>
+				<th>ISBN</th>
 				<th>Title</th>
+				<th>Penerbit</th>
+				<th>Tahun Buku</th>
 				<th>Stok Buku</th>
 				<th>Tanggal Masuk</th>
 				<th>Aksi</th>
@@ -132,7 +135,10 @@
 		<?php $no=1;foreach($buku->result_array() as $isi){?>
 			<tr>
 				<td><?= $no;?></td>
+				<td><?= $isi['isbn'];?></td>
 				<td><?= $isi['title'];?></td>
+				<td><?= $isi['penerbit'];?></td>
+				<td><?= $isi['thn_buku'];?></td>
 				<td><?= $isi['jml'];?></td>
 				<td><?= $isi['tgl_masuk'];?></td>
 				<td style="width:17%">

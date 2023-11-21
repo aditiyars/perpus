@@ -111,6 +111,7 @@
                 </ul>
             </li> 
 			<?php }?>
+			
 			<?php if($this->session->userdata('level') == 'Anggota'){?>
 				<li class="<?php if($this->uri->uri_string() == 'transaksi'){ echo 'active';}?>">
 					<a href="<?php echo base_url("transaksi");?>" class="cursor">
@@ -133,12 +134,13 @@
 						<i class="fa fa-user"></i>  <span>Data Anggota</span>
 					</a>
 				</li>
-				<li class="">
-					<a href="<?php echo base_url('user/detail/'.$this->session->userdata('ses_id'));?>" target="_blank" class="cursor">
-						<i class="fa fa-print"></i> <span>Cetak kartu Anggota</span>
-					</a>
-				</li>
+				
 			<?php }?>
+			<li>
+                <a href="<?php echo base_url('');?>" class="cursor">
+                    <i class="fa fa-home"></i> <span>Home</span>
+                </a>
+			</li>
         </ul>
         <div class="clearfix"></div>
         <br/>

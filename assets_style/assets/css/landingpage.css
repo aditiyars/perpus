@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "gravitasone, monospace" !important;
+  font-family: MontserratRegular;
 }
 
 .container {
@@ -29,7 +29,10 @@
 
 .nav-link {
   text-decoration: none;
-  color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 7px;
+  background-color: #113946;
 }
 
 .main-section {
@@ -76,7 +79,7 @@
 
 .btn {
   width: fit-content;
-  padding: 10px;
+  padding: 15px;
   outline: none;
   border: none;
   font-size: 15px;
@@ -96,9 +99,14 @@
 }
 
 #top-book {
+  padding:0;
+}
+
+#section-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  padding-top: 30px;
   width: 100%;
   gap: 30px;
 }
@@ -125,6 +133,15 @@
   align-items: center;
   gap: 20px;
   border-radius: 6px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .card-image-box {
@@ -149,6 +166,9 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+	padding : 10px;
+	text-align:center;
+	opacity: 0.8;
 }
 
 /* .card-description {

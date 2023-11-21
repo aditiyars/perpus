@@ -27,6 +27,11 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
+		if($this->session->userdata('masuk_perpus') == TRUE){
+			$url=base_url('dashboard');
+			redirect($url);
+		}
+		
 		$this->data['title_web'] = 'Login | Sistem Informasi Perpustakaan';
 		$this->load->view('login_view',$this->data);
 	}
