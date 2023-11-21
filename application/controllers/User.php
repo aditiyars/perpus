@@ -50,13 +50,12 @@ class User extends CI_Controller {
         $telepon = htmlentities($this->input->post('telepon',TRUE));
         $status = htmlentities($this->input->post('status',TRUE));
         $alamat = htmlentities($this->input->post('alamat',TRUE));
-		$email = $_POST['email'];
 		
-		$dd = $this->db->query("SELECT * FROM tbl_login WHERE user = '$user' OR email = '$email'");
+		$dd = $this->db->query("SELECT * FROM tbl_login WHERE user = '$user'");
 		if($dd->num_rows() > 0)
 		{
 			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">
-			<p> Gagal Update User : '.$nama.' !, Username / Email Anda Sudah Terpakai</p>
+			<p> Gagal Update User : '.$nama.' !, Username Sudah Terpakai</p>
 			</div></div>');
 			redirect(base_url('user/tambah')); 
 		}else{
@@ -78,12 +77,9 @@ class User extends CI_Controller {
                 'user'=>$user,
                 'pass'=>$pass,
                 'level'=>$level,
-                'tempat_lahir'=>$_POST['lahir'],
                 'tgl_lahir'=>$_POST['tgl_lahir'],
                 'level'=>$level,
-                'email'=>$_POST['email'],
                 'telepon'=>$telepon,
-                'foto'=>$data1['upload_data']['file_name'],
                 'jenkel'=>$jenkel,
                 'alamat'=>$alamat,
                 'tgl_bergabung'=>date('Y-m-d')
@@ -183,10 +179,8 @@ class User extends CI_Controller {
 					'nama'=>$nama,
 					'user'=>$user,
 					'pass'=>md5($pass),
-					'tempat_lahir'=>$_POST['lahir'],
 					'tgl_lahir'=>$_POST['tgl_lahir'],
-					'level'=>$level,
-					'email'=>$_POST['email'],
+					'level'=>$level,				
 					'telepon'=>$telepon,
 					'jenkel'=>$jenkel,
 					'alamat'=>$alamat,
@@ -210,10 +204,8 @@ class User extends CI_Controller {
 				$data = array(
 					'nama'=>$nama,
 					'user'=>$user,
-					'tempat_lahir'=>$_POST['lahir'],
 					'tgl_lahir'=>$_POST['tgl_lahir'],
 					'level'=>$level,
-					'email'=>$_POST['email'],
 					'telepon'=>$telepon,
 					'jenkel'=>$jenkel,
 					'alamat'=>$alamat,
@@ -240,18 +232,14 @@ class User extends CI_Controller {
 			$result1 = $this->upload->data();
 			$result = array('gambar'=>$result1);
 			$data1 = array('upload_data' => $this->upload->data());
-			unlink('./assets_style/image/'.$this->input->post('foto'));
 			if($this->input->post('pass') !== ''){
 				$data = array(
 					'nama'=>$nama,
 					'user'=>$user,
-					'tempat_lahir'=>$_POST['lahir'],
 					'tgl_lahir'=>$_POST['tgl_lahir'],
 					'pass'=>md5($pass),
 					'level'=>$level,
-					'email'=>$_POST['email'],
 					'telepon'=>$telepon,
-					'foto'=>$data1['upload_data']['file_name'],
 					'jenkel'=>$jenkel,
 					'alamat'=>$alamat
 				);
@@ -276,12 +264,9 @@ class User extends CI_Controller {
 				$data = array(
 					'nama'=>$nama,
 					'user'=>$user,
-					'tempat_lahir'=>$_POST['lahir'],
 					'tgl_lahir'=>$_POST['tgl_lahir'],
 					'level'=>$level,
-					'email'=>$_POST['email'],
 					'telepon'=>$telepon,
-					'foto'=>$data1['upload_data']['file_name'],
 					'jenkel'=>$jenkel,
 					'alamat'=>$alamat
 				);
@@ -309,7 +294,6 @@ class User extends CI_Controller {
         if($this->uri->segment('3') == ''){ echo '<script>alert("halaman tidak ditemukan");window.location="'.base_url('user').'";</script>';}
         
         $user = $this->M_Admin->get_tableid_edit('tbl_login','id_login',$this->uri->segment('3'));
-        unlink('./assets_style/image/'.$user->foto);
 		$this->M_Admin->delete_table('tbl_login','id_login',$this->uri->segment('3'));
 		
 		$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">

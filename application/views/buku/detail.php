@@ -27,37 +27,12 @@
 			    <div class="box-body">
 					<table class="table table-striped table-bordered">
 						<tr>
-							<td style="width:20%">ISBN</td>
-							<td><?= $buku->isbn;?></td>
-						</tr>
-						<tr>
-							<td>Sampul Buku</td>
-							<td><?php if(!empty($buku->sampul !== "0")){?>
-									<a href="<?= base_url('assets_style/image/buku/'.$buku->sampul);?>" target="_blank">
-										<img src="<?= base_url('assets_style/image/buku/'.$buku->sampul);?>" style="width:170px;height:170px;" class="img-responsive">
-									</a>
-									<?php }else{ echo '<br/><p style="color:red">* Tidak ada Sampul</p>';}?>
-								</td>
-						</tr>
-						<tr>
 							<td>Judul Buku</td>
 							<td><?= $buku->title;?></td>
 						</tr>
 						<tr>
 							<td>Kategori</td>
 							<td><?= $kat->nama_kategori;?></td>
-						</tr>
-						<tr>
-							<td>Penerbit</td>
-							<td><?= $buku->penerbit;?></td>
-						</tr>
-						<tr>
-							<td>Pengarang</td>
-							<td><?= $buku->pengarang;?></td>
-						</tr>
-						<tr>
-							<td>Tahun Terbit</td>
-							<td><?= $buku->thn_buku;?></td>
 						</tr>
 						<tr>
 							<td>Jumlah Buku</td>
@@ -81,21 +56,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Keterangan Lainnya</td>
-							<td><?= $buku->isi;?></td>
-						</tr>
-						<tr>
 							<td>Rak / Lokasi</td>
 							<td><?= $rak->nama_rak;?></td>
-						</tr>
-						<tr>
-							<td>Lampiran</td>
-							<td><?php if(!empty($buku->lampiran !== "0")){?>
-									<a href="<?= base_url('assets_style/image/buku/'.$buku->lampiran);?>" class="btn btn-primary btn-md" target="_blank">
-										<i class="fa fa-download"></i> Sample Buku
-									</a>
-								<?php  }else{ echo '<br/><p style="color:red">* Tidak ada Lampiran</p>';}?>
-                               </td>
 						</tr>
 						<tr>
 							<td>Tanggal Masuk</td>

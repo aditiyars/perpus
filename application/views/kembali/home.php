@@ -47,7 +47,6 @@
                                 <th>Balik</th>
                                 <th style="width:10%">Status</th>
                                 <th>Kembali</th>
-                                <th>Denda</th>
                                 <th>Aksi</th>
                             </tr>
 						</thead>
@@ -59,8 +58,6 @@
                                 $ang = $this->db->query("SELECT * FROM tbl_login WHERE anggota_id = '$anggota_id'")->row();
 
                                 $pinjam_id = $isi['pinjam_id'];
-                                $denda = $this->db->query("SELECT * FROM tbl_denda WHERE pinjam_id = '$pinjam_id'");
-                                $total_denda = $denda->row();
 						?>
                             <tr>
                                 <td><?= $no;?></td>
@@ -81,29 +78,7 @@
 									
 									?>
 								</td>
-                                <td>
-									<?php 
-										$jml = $this->db->query("SELECT * FROM tbl_pinjam WHERE pinjam_id = '$pinjam_id'")->num_rows();			
-										if($denda->num_rows() > 0){
-											$s = $denda->row();
-											echo $this->M_Admin->rp($s->denda);
-										}else{
-											$date1 = date('Ymd');
-											$date2 = preg_replace('/[^0-9]/','',$isi['tgl_balik']);
-											$diff = $date2 - $date1;
-
-											if($diff >= 0 )
-											{
-												echo '<p style="color:green;">
-												Tidak Ada Denda</p>';
-											}else{
-												$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda','stat','Aktif'); 
-												echo '<p style="color:red;font-size:18px;">'.$this->M_Admin->rp($jml*($dd->harga_denda*abs($diff))).' 
-												</p><small style="color:#333;">* Untuk '.$jml.' Buku</small>';
-											}
-										}
-									?>
-								</td>
+                                
                                 <td>
                                     <?php if($this->session->userdata('level') == 'Petugas'){ ?>
                                         <a href="<?= base_url('transaksi/detailpinjam/'.$isi['pinjam_id']);?>" 

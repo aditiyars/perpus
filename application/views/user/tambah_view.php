@@ -25,10 +25,6 @@
                                     <input type="text" class="form-control" name="nama" required="required" placeholder="Nama Pengguna">
                                 </div>
                                 <div class="form-group">
-                                    <label>Tempat Lahir</label>
-                                    <input type="text" class="form-control" name="lahir" required="required" placeholder="Contoh : Bekasi">
-                                </div>
-                                <div class="form-group">
                                     <label>Tanggal Lahir</label>
                                     <input type="date" class="form-control" name="tgl_lahir" required="required" placeholder="Contoh : 1999-05-18">
                                 </div>
@@ -59,14 +55,6 @@
                                 <div class="form-group">
                                     <label>Telepon</label>
                                     <input id="uintTextBox" class="form-control" name="telepon" required="required" placeholder="Contoh : 089618173609">
-                                </div>
-                                <div class="form-group">
-                                    <label>E-mail</label>
-                                    <input type="email" class="form-control" name="email" required="required" placeholder="Contoh : fauzan1892@codekop.com">
-                                </div>
-                                <div class="form-group">
-                                    <label>Pas Foto</label>
-                                    <input type="file" accept="image/*" name="gambar" required="required">
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat</label>

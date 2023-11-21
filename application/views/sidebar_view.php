@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" style="background-color:#EAD7BB">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -32,7 +32,6 @@
         <ul class="sidebar-menu" data-widget="tree">
 			<?php if($this->session->userdata('level') == 'Petugas'){?>
             <!-- sidebar menu: : style can be found in sidebar.less -->
-            <li class="header">MAIN NAVIGATION</li>
             <li class="<?php if($this->uri->uri_string() == 'dashboard'){ echo 'active';}?>">
                 <a href="<?php echo base_url('dashboard');?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -42,7 +41,8 @@
                 <?php if($this->uri->uri_string() == 'user/tambah'){ echo 'active';}?>
                 <?php if($this->uri->uri_string() == 'user/edit/'.$this->uri->segment('3')){ echo 'active';}?>">
                 <a href="<?php echo base_url('user');?>" class="cursor">
-                    <i class="fa fa-user"></i> <span>Data Pengguna</span></a>
+                    <i class="fa fa-user"></i> <span>Data Member</span>
+                </a>
 			</li>
 			<li class="treeview <?php if($this->uri->uri_string() == 'data/kategori'){ echo 'active';}?>
 				<?php if($this->uri->uri_string() == 'data/rak'){ echo 'active';}?>
@@ -109,13 +109,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li class="<?php if($this->uri->uri_string() == 'transaksi/denda'){ echo 'active';}?>">
-                <a href="<?php echo base_url("transaksi/denda");?>" class="cursor">
-                    <i class="fa fa-money"></i> <span>Denda</span>
-                    
-                </a>
-            </li>
+            </li> 
 			<?php }?>
 			<?php if($this->session->userdata('level') == 'Anggota'){?>
 				<li class="<?php if($this->uri->uri_string() == 'transaksi'){ echo 'active';}?>">

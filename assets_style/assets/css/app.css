@@ -1,0 +1,29 @@
+/* 
+FFF2D8
+EAD7BB
+BCA37F
+113946
+*/
+
+
+.bg-color-one{
+	background-color:#FFF2D8;
+}
+
+.bg-color-two{
+	background-color:#EAD7BB;
+}
+
+.bg-color-three{
+	background-color:#BCA37F;
+}
+
+.bg-color-four{
+	background-color:#113946;
+}
+
+.bg-image{
+	background-image: url(../../image/Buku-2.jpg);
+	background-position:center;
+	background-size:cover
+}

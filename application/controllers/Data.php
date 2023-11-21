@@ -198,11 +198,7 @@ class Data extends CI_Controller {
 			$data = array(
 				'id_kategori'=>htmlentities($post['kategori']), 
 				'id_rak' => htmlentities($post['rak']), 
-				'isbn' => htmlentities($post['isbn']), 
 				'title'  => htmlentities($post['title']),
-				'pengarang'=> htmlentities($post['pengarang']), 
-				'penerbit'=> htmlentities($post['penerbit']),  
-				'thn_buku' => htmlentities($post['thn']), 
 				'isi' => $this->input->post('ket'), 
 				'jml'=> htmlentities($post['jml']),  
 				'tgl_masuk' => date('Y-m-d H:i:s')

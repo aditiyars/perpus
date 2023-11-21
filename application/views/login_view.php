@@ -1,101 +1,84 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $title_web;?></title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="shortcut icon" href="" />
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/font-awesome/css/font-awesome.min.css');?>">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/bower_components/Ionicons/css/ionicons.min.css');?>">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/AdminLTE.min.css');?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets_style/assets/dist/css/responsivelogin.css');?>">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"><style type="text/css">
-        .navbar-inverse{
-        background-color:#333;
-         }
-         .navbar-color{
-        color:#fff;
-         }
-          blink, .blink {
-                animation: blinker 3s linear infinite;
-            }
+    <title>SB Admin 2 - Login</title>
 
-           @keyframes blinker {
-                50% { opacity: 0; }
-           }
-    </style>
-  </head>
-<body class="hold-transition login-page" style="overflow-y: hidden;background:url(
-	'<?php echo base_url('assets_style/image/Buku-2.jpg');?>')no-repeat;background-size:100%;">
-<div class="login-box">
-	<br/>
-  <div class="login-logo">
-    <a href="index.php" style="color: yellow;">Sistem Informasi <br/><b>Perpustakaan</b></a>
-  </div>
-  <div id="tampilalert"></div>
-  <!-- /.login-logo -->
-  <div class="login-box-body" style="border:2px solid #226bbf;">
-    <p class="login-box-msg" style="font-size:16px;"></p>
-    <form action="<?= base_url('login/auth');?>" method="POST">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username" id="user" name="user" required="required" autocomplete="off">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" id="pass" name="pass" required="required" autocomplete="off">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-        <!-- /.col
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox" name="remember" id="remember" value="R1"> Remember Me
-            </label>
-          </div>-->
-          <!-- /.social-auth-links -->
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="<?= base_url();?>assets_style/assets/css/sb-admin-2.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url();?>assets_style/assets/css/app.css">
+</head>
+
+<body class="bg-color-one">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-image">
+							</div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Sistem Informasi<br><b>Perpustakaan Daerah</b></h1>
+                                    </div>
+                                    <form action="<?= base_url('login/auth');?>" method="POST" class="user">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="user" name="user" required="required"
+                                                placeholder="Enter Username...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="password" name="pass" placeholder="Password">
+                                        </div>
+                                        <button class="btn btn-primary bg-color-four btn-user btn-block" type="submit">
+                                            Login
+										</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-        <div class="col-xs-4">
-          <button type="submit" id="loding" class="btn btn-primary btn-block btn-flat">Sign In</button>
-          <div id="loadingcuy"></div>
-        </div>
-        <!-- /.col -->
-      </div>
-    </form>
-  </div>
-  <!-- /.login-box-body -->
-  <br/>
-  <footer>
-    <div class="login-box-body text-center bg-blue">
-       <a style="color: yellow;"> Copyright &copy; Sistem Perpustakaan Codekop - <?php echo date("Y");?>
+
     </div>
-  </footer>
-</div>
-<!-- /.login-box -->
-<!-- Response Ajax -->
-<div id="tampilkan"></div>
-<!-- jQuery 3 -->
-<script src="<?php echo base_url('assets_style/assets/bower_components/jquery/dist/jquery.min.js');?>"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url('assets_style/assets/bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
-<!-- iCheck -->
-<script src="<?php echo base_url('assets_style/assets/plugins/iCheck/icheck.min.js');?>"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+
 </html>

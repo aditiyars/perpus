@@ -23,6 +23,7 @@
 	<!-- Theme style -->  
 	
 	<link href="<?php echo base_url();?>assets_style/assets/plugins/summernote/summernote-lite.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url();?>assets_style/assets/css/app.css">
 
   <link rel="stylesheet" href="<?php echo base_url();?>assets_style/assets/dist/css/AdminLTE.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets_style/assets/dist/css/responsive.css">
@@ -58,14 +59,14 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="<?php echo base_url('index.php/dashboard');?>" class="logo">
+    <a href="<?php echo base_url('index.php/dashboard');?>" class="logo" style="background-color:#113946">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>P</b>C</span>
+      <span class="logo-mini"><b>P</b>D</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">Perpus Codekop</span>
+      <span class="logo-lg">Perpustakaan Daerah</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top" style="background-color:#113946">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
@@ -78,7 +79,7 @@
               $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row();
              ?>
             <a href="<?= base_url('user/edit/'.$idbo);?>">
-              Welcome , <i class="fa fa-edit"> </i> <?php echo $d->nama; echo ' | ( '.$d->level.' )'; ?></a>
+              Welcome <?php echo $d->nama;?></a>
           </li>
           <li>
             <a href="<?php echo base_url();?>login/logout">Sign out</a>

@@ -28,11 +28,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Sampul</th>
-                                <th>ISBN</th>
                                 <th>Title</th>
-                                <th>Penerbit</th>
-                                <th>Tahun Buku</th>
                                 <th>Stok Buku</th>
                                 <th>Dipinjam</th>
                                 <th>Tanggal Masuk</th>
@@ -43,22 +39,7 @@
                         <?php $no=1;foreach($buku->result_array() as $isi){?>
                             <tr>
                                 <td><?= $no;?></td>
-                                <td>
-                                    <center>
-                                        <?php if(!empty($isi['sampul'] !== "0")){?>
-                                        <img src="<?php echo base_url();?>assets_style/image/buku/<?php echo $isi['sampul'];?>" alt="#" 
-                                        class="img-responsive" style="height:auto;width:100px;"/>
-                                        <?php }else{?>
-                                            <!--<img src="" alt="#" class="user-image" style="border:2px solid #fff;"/>-->
-											<i class="fa fa-book fa-3x" style="color:#333;"></i> <br/><br/>
-											Tidak Ada Sampul
-                                        <?php }?>
-                                    </center>
-                                </td>
-                                <td><?= $isi['isbn'];?></td>
                                 <td><?= $isi['title'];?></td>
-                                <td><?= $isi['penerbit'];?></td>
-                                <td><?= $isi['thn_buku'];?></td>
                                 <td><?= $isi['jml'];?></td>
 								<td>
 									<?php
