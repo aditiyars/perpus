@@ -6,9 +6,7 @@ class Home extends CI_Controller{
 	public function index()
 	{
 		$this->load->helper('url');
-		// $this->load->view('landingpage/header');
 		$this->load->view('landingpage/home');
-		// $this->load->view('landingpage/footer');
 	}
 
 }

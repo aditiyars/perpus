@@ -12,111 +12,111 @@
   <script defer src="<?= base_url();?>assets_style/assets/scripts/landingpage.js"></script>
 </head>
 
-<body class="bg-color-one">
-  <div class="container">
-    <nav class="navbar bg-color-three">
-      <div class="brand">
-        <h1 class="brand-title">PUSDA</h1>
-      </div>
-      <div class="nav-list">
-        <ul class="nav-items">
-          <li class="nav-item"><a class="nav-link" id="scrolled-nav-link" data-target="top-book">Most Popular Books</a></li>
-          <li class="nav-item"><a class="nav-link" id="scrolled-nav-link" data-target="footer">Contact</a></li>
-          <li class="nav-item"><a href="<?= base_url()?>dashboard" class="nav-link" id="btn-nav-link">Dashboard</a></li>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <section class="main-section bg-color-two" id="jumbotron">
-        <div class="jumbo-image-box">
-          <img class="jumbo-image" src="<?= base_url();?>assets_style/image/persentation.svg" alt="banner-image">
-        </div>
-        <div class="jumbo-text">
-          <div>
-            <h1 class="jumbo-text-title">SELAMAT DATANG DI <span class="title-span">PERPUSTAKAAN DAERAH</span></h1>
-            <h2 class="jumbo-text-subtitle">Sistem Informasi perpustakaan daerah</h2>
-			<h3>Jam operasional : 09:00 - 17:00</h3>
+<body>
+  <div class="app">
+    <header class="header">
+        <nav class="nav">
+          <div class="brand">
+            <div class="brand-logo">
+              <img src="<?= base_url();?>assets_style/image/brand-logo.png" alt="stack of books">
+            </div>
+            <a href="<?= base_url(''); ?>" class="brand-title">PUSDA</a>
           </div>
-          <a href="login" class="btn-link btn bg-color-four">Get Started</a>
-        </div>
-      </section>
-
-      <section class="main-section" id="top-book" style="margin:10px 30px;">
-        <div class="section-container">
-          <h1 class="section-title" style="margin-top:20px;">Most Popular Book</h1>
-          <div class="card-collections">
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/1.jpg" alt="buku 111 Kode HTML Untuk Belajar Kilat">
+          <ul class="nav-list">
+            <li><a class="nav-link" data-target="jumbo">Home</a></li>
+            <li><a class="nav-link" data-target="popular-books">Most Popular Books</a></li>
+            <li><a class="nav-link" data-target="footer">Contact</a></li>
+            <li><a href="login" class="btn btn-link">Login</a></li>
+          </ul>
+        </nav>
+        <div class="jumbo" id="jumbo">
+          <div class="floating-image floating-image-top">
+            <img src="<?= base_url();?>assets_style/image/fig-top.png" alt="floating image">
+          </div>
+          <div class="jumbo-body">
+            <div class="jumbo-content jumbo-item">
+              <h1 class="jumbo-content-title">SELAMAT DATANG DI <span class="jumbo-content-title-brand">PERPUSTAKAAN DAERAH</span></h1>
+              <h2 class="jumbo-content-subtitle">Sistem Informasi Perpustakaan Daerah</h2>
+              <div class="jumbo-content-info">
+                <div class="jumbo-content-info-image">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="jumbo-content-info-desc">
+                  <p>Jam Operasional</p>
+                  <p class="info-desc-strong">09.00 - 17.00 WIB</p>
+                </div>
               </div>
-              <div class="card-info">
-                <p class="card-title">111 Kode HTML Untuk Belajar Kilat</p>
-                <p class="card-description">Teknik Menguasai HTML Secepat Kilat Untuk Pemula Yang Ingin Menjadi Master HTML Untuk Menguasai Pemrograman Web</p>
-              </div>
+              <a href="<?= base_url()?>dashboard" class="btn btn-jumbo">Get Started</a>
             </div>
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/2.jpg" alt="buku Dasar - Dasar Teknik Informatika">
-              </div>
-              <div class="card-info">
-                <p class="card-title">Dasar - Dasar Teknik Informatika</p>
-                <p class="card-description">Berkenalan Dan Belajar Tentang Pengolahahan Data, Pemprosesan Data, Penyimpanan Data, Manipulasi Data Dan Masih Banyak Lagi</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/3.jpg" alt="buku Aplikasi Komputer">
-              </div>
-              <div class="card-info">
-                <p class="card-title">Aplikasi Komputer</p>
-                <p class="card-description">Untuk Pemula Yang Baru Belajar Tentang Komputer, Terutama Yang Berhubungan Dengan Aplikasi Komputer.</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/4.jpg" alt="buku Investing In Digital Start Up">
-              </div>
-              <div class="card-info">
-                <p class="card-title">Investing In Digital Start Up</p>
-                <p class="card-description">Buku Ini Menjawab Pertanyaan Bagaimana Cara Kerja Dunia 4.0 Sesungguhnya?</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/5.jpg" alt="buku Pengantar Teknologi Informasi">
-              </div>
-              <div class="card-info">
-                <p class="card-title">Pengantar Teknologi Informasi</p>
-                <p class="card-description">Belajar Tentang Perangkat Sederhana. Dimana Dari Alat Sederhana Inilah Akan Dikembangkan Menjadi Alat Elektronis Dan Alat Mekanis ...</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-image-box">
-                <img class="card-image" src="<?= base_url();?>assets_style/image/6.jpg" alt="buku Teknik Pengolahan Audio & Video">
-              </div>
-              <div class="card-info">
-                <p class="card-title">Teknik Pengolahan Audio & Video</p>
-                <p class="card-description">Akan Mempelajari Tentang Proses Produksi Multimedia Dan Berbagai Format Video, Tata Cara Gambar Bergerak, Perekaman Video Dengan ...</p>
-              </div>
+            <div class="jumbo-image jumbo-item">
+              <img src="<?= base_url();?>assets_style/image/jumbotron.png" alt="library room">
             </div>
           </div>
         </div>
-      </section>
-      <section class="main-section" id="banner-motivation">
-        <div class="banner-motivation">
-          <img class="motivation-image" src="<?= base_url();?>assets_style/image/banner-motivation.png" alt="quote by Joseph Addison">
+    </header>
+    <main class="main">
+      <div class="main-section" id="popular-books">
+        <div class="floating-image floating-image-top">
+          <img src="<?= base_url();?>assets_style/image/fig-top.png" alt="floating image">
         </div>
-      </section>
+        <div class="floating-image floating-image-bottom">
+          <img src="<?= base_url();?>assets_style/image/fig-bottom.png" alt="floating image">
+        </div>
+        <h1 class="section-title">Most Popular Books</h1>
+        <div class="bookshelf">
+          <div class="book">
+            <div class="book-cover">
+              <img src="<?= base_url();?>assets_style/image/1.jpg" alt="book-cover">
+            </div>
+            <div class="book-info">
+              <p class="book-title">111 Kode HTML Untuk Belajar Kilat</p>
+              <p class="book-description">Teknik Menguasai HTML Secepat Kilat Untuk Pemula Yang Ingin Menjadi Master HTML Untuk Menguasai Pemrograman Web</p>
+            </div>
+          </div>
+          <div class="book">
+            <div class="book-cover">
+              <img src="<?= base_url();?>assets_style/image/2.jpg" alt="book-cover">
+            </div>
+            <div class="book-info">
+              <p class="book-title">Dasar - Dasar Teknik Informatika</p>
+              <p class="book-description">Berkenalan Dan Belajar Tentang Pengolahahan Data, Pemprosesan Data, Penyimpanan Data, Manipulasi Data Dan Masih Banyak Lagi</p>
+            </div>
+          </div>
+          <div class="book">
+            <div class="book-cover">
+              <img src="<?= base_url();?>assets_style/image/3.jpg" alt="book-cover">
+            </div>
+            <div class="book-info">
+              <p class="book-title">Aplikasi Komputer</p>
+              <p class="book-description">Untuk Pemula Yang Baru Belajar Tentang Komputer, Terutama Yang Berhubungan Dengan Aplikasi Komputer.</p>
+            </div>
+          </div>
+          <div class="book">
+            <div class="book-cover">
+              <img src="<?= base_url();?>assets_style/image/4.jpg" alt="book-cover">
+            </div>
+            <div class="book-info">
+              <p class="book-title">Investing In Digital Start Up</p>
+              <p class="book-description">Buku Ini Menjawab Pertanyaan Bagaimana Cara Kerja Dunia 4.0 Sesungguhnya?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-section" id="motivation-banner">
+        <div class="banner-image">
+          <img src="<?= base_url();?>assets_style/image/banner-motivation.png" alt="banner-motivation">
+        </div>
+      </div>
     </main>
-    <footer class="footer bg-color-three" id="footer">
+    <footer class="footer" id="footer">
       <div class="footer-section" id="social-media">
-        <a href="https://id-id.facebook.com/" class="social-media-link social-media-item bg-color-four">
+        <a href="https://id-id.facebook.com/" class="social-media-link social-media-item">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://twitter.com/" class="social-media-link social-media-item bg-color-four">
+        <a href="https://twitter.com/" class="social-media-link social-media-item">
           <i class="fa-brands fa-x-twitter"></i>
         </a>
-        <a href="https://www.instagram.com/" class="social-media-link social-media-item bg-color-four">
+        <a href="https://www.instagram.com/" class="social-media-link social-media-item">
           <i class="fa-brands fa-instagram"></i>
         </a>
       </div>
