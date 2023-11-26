@@ -117,7 +117,7 @@ img {
 }
 
 .jumbo-body {
-  height: calc(100vh - 72px);
+  height: calc(80vh - 72px);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -191,7 +191,7 @@ img {
 }
 
 .main-section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -227,6 +227,11 @@ img {
   border-radius: 6px;
   overflow: hidden;
   background-color: white;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.book:hover {
   box-shadow: 0px 4px 40.400001525878906px 7px #00000040;
 }
 
@@ -242,12 +247,16 @@ img {
   flex-direction: column;
   text-align: center;
   font-weight: 5;
-  gap: 10px;
+  gap: 20px;
   font-weight: bold;
 }
 
 .book-title {
   font-family: MontserratBold;
+}
+
+.book-description {
+  text-align: left;
 }
 
 #motivation-banner {
