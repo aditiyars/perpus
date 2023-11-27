@@ -46,7 +46,7 @@
                   <p class="info-desc-strong">09.00 - 17.00 WIB</p>
                 </div>
               </div>
-              <a href="<?= base_url()?>dashboard" class="btn btn-jumbo">Get Started</a>
+              <a href="<?= base_url()?>register" class="btn btn-jumbo">Get Started</a>
             </div>
             <div class="jumbo-image jumbo-item">
               <img src="<?= base_url();?>assets_style/image/jumbotron.png" alt="library room">

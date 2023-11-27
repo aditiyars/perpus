@@ -48,7 +48,7 @@ class User extends CI_Controller {
         $level = htmlentities($this->input->post('level',TRUE));
         $jenkel = htmlentities($this->input->post('jenkel',TRUE));
         $telepon = htmlentities($this->input->post('telepon',TRUE));
-        $status = htmlentities($this->input->post('status',TRUE));
+        // $status = htmlentities($this->input->post('status',TRUE));
         $alamat = htmlentities($this->input->post('alamat',TRUE));
 		
 		$dd = $this->db->query("SELECT * FROM tbl_login WHERE user = '$user'");
@@ -158,7 +158,7 @@ class User extends CI_Controller {
         $level = htmlentities($this->input->post('level',TRUE));
         $jenkel = htmlentities($this->input->post('jenkel',TRUE));
         $telepon = htmlentities($this->input->post('telepon',TRUE));
-        $status = htmlentities($this->input->post('status',TRUE));
+        // $status = htmlentities($this->input->post('status',TRUE));
         $alamat = htmlentities($this->input->post('alamat',TRUE));
         $id_login = htmlentities($this->input->post('id_login',TRUE));
 
