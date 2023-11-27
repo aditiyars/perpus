@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
-		if($this->session->userdata('masuk_perpus') == TRUE){
+		if($this->session->userdata('masuk_perpus') == TRUE && $this->session->userdata('verifikasi') == TRUE){
 			$url=base_url('dashboard');
 			redirect($url);
 		}
@@ -52,6 +52,7 @@ class Login extends CI_Controller {
             $this->session->set_userdata('level',$hasil_login['level']);
             $this->session->set_userdata('ses_id',$hasil_login['id_login']);
             $this->session->set_userdata('anggota_id',$hasil_login['anggota_id']);
+            $this->session->set_userdata('verifikasi',$hasil_login['verifikasi']);
 
             echo '<script>window.location="'.base_url().'dashboard";</script>';
         }else{

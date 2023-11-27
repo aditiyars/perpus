@@ -8,9 +8,10 @@ class Data extends CI_Controller {
      $this->data['CI'] =& get_instance();
      $this->load->helper(array('form', 'url'));
      $this->load->model('M_Admin');
-		if($this->session->userdata('masuk_perpus') != TRUE){
-				$url=base_url('login');
-				redirect($url);
+		if($this->session->userdata('masuk_perpus') != TRUE || $this->session->userdata('verifikasi') != TRUE){
+			$this->session->sess_destroy();
+			$url=base_url('login');
+			redirect($url);
 		}
 	}
 

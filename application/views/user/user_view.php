@@ -29,6 +29,7 @@
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>User</th>
+                                <th>Level</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Telepon</th>
                                 <th>Alamat</th>
@@ -36,22 +37,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php $no=1;foreach($user as $isi){?>
+                        <?php $no=1;foreach($user as $isi){
+							if ($isi['anggota_id'] != $_SESSION['anggota_id']) { ?>
                             <tr>
                                 <td><?= $no;?></td>
                                 <td><?= $isi['anggota_id'];?></td>
                                 <td><?= $isi['nama'];?></td>
                                 <td><?= $isi['user'];?></td>
+                                <td><?= $isi['level'];?></td>
                                 <td><?= $isi['jenkel'];?></td>
                                 <td><?= $isi['telepon'];?></td>
                                 <td><?= $isi['alamat'];?></td>
                                 <td style="width:20%;">
-                                    <a href="<?= base_url('user/edit/'.$isi['id_login']);?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
+                                    <a href="<?= base_url('user/edit/'.$isi['id_login']);?>">
+										<button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+									</a>
                                     <a href="<?= base_url('user/del/'.$isi['id_login']);?>" onclick="return confirm('Anda yakin user akan dihapus ?');">
-									<button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+										<button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</a>
+									<!-- disini bikin kondisi jika anggota terverifikasi button ubah jadi verified -->
+									<?php if($isi['verifikasi']){ ?>
+										<a href="#">
+											<button class="btn btn-disabled">Terverifikasi</button>
+										</a>
+									<?php }else{ ?>
+										<!-- link ke view verifikasi -->
+										<a href="<?= base_url('user/verifikasi/'.$isi['id_login']);?>">
+											<button class="btn btn-success">Verifikasi</button>
+										</a>
+									<?php } ?>
                                 </td>
                             </tr>
-                        <?php $no++;}?>
+                        <?php $no++;}}?>
                         </tbody>
                     </table>
 			    </div>

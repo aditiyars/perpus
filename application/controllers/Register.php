@@ -27,6 +27,10 @@ class Register extends CI_Controller {
 	 */
 	public function index()
 	{	
+		if($this->session->userdata('masuk_perpus') == TRUE){
+			$url=base_url('dashboard');
+			redirect($url);
+		}
 		$this->data['title_web'] = 'Register Membership | Sistem Informasi Perpustakaan';
 		$this->load->view('register_view',$this->data);
 	}

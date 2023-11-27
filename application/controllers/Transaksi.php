@@ -9,7 +9,8 @@ class Transaksi extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('M_Admin');
 		$this->load->library(array('cart'));
-		if($this->session->userdata('masuk_perpus') != TRUE){
+		if($this->session->userdata('masuk_perpus') != TRUE || $this->session->userdata('verifikasi') != TRUE){
+			$this->session->sess_destroy();
 			$url=base_url('login');
 			redirect($url);
 		}

@@ -8,7 +8,8 @@ class User extends CI_Controller {
      $this->data['CI'] =& get_instance();
      $this->load->helper(array('form', 'url'));
      $this->load->model('M_Admin');
-     	if($this->session->userdata('masuk_perpus') != TRUE){
+		if($this->session->userdata('masuk_perpus') != TRUE || $this->session->userdata('verifikasi') != TRUE){
+			$this->session->sess_destroy();
 			$url=base_url('login');
 			redirect($url);
 		}
@@ -71,7 +72,12 @@ class User extends CI_Controller {
             $result1 = $this->upload->data();
             $result = array('gambar'=>$result1);
             $data1 = array('upload_data' => $this->upload->data());
-            $data = array(
+            $verifikasi = 0;
+			if ($level == "Petugas") {
+				$verifikasi = 1;
+			}
+
+			$data = array(
 				'anggota_id' => $id,
                 'nama'=>$nama,
                 'user'=>$user,
@@ -82,7 +88,8 @@ class User extends CI_Controller {
                 'telepon'=>$telepon,
                 'jenkel'=>$jenkel,
                 'alamat'=>$alamat,
-                'tgl_bergabung'=>date('Y-m-d')
+                'tgl_bergabung'=>date('Y-m-d'),
+				'verifikasi' => $verifikasi
             );
 			$this->db->insert('tbl_login',$data);
 			
@@ -301,4 +308,23 @@ class User extends CI_Controller {
 		</div></div>');
 		redirect(base_url('user'));  
     }
+
+	public function verifikasi($id){
+		$this->data['idbo'] = $this->session->userdata('ses_id');
+        $this->data['user'] = $this->M_Admin->get_tableid('tbl_login','id_login', $id);
+		$this->data['id'] = $id;
+        $this->data['title_web'] = 'Data User ';
+        $this->load->view('header_view',$this->data);
+        $this->load->view('sidebar_view',$this->data);
+        $this->load->view('user/verifikasi',$this->data);
+        $this->load->view('footer_view',$this->data);
+	}
+	
+	public function ver($id){
+		$data = array(
+			'verifikasi' => true
+		);
+		$this->M_Admin->update_table('tbl_login','id_login',$id,$data);
+		redirect(base_url('user'));
+	}
 }

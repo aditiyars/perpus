@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2023 at 07:26 AM
+-- Generation Time: Nov 27, 2023 at 07:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -123,16 +123,18 @@ CREATE TABLE `tbl_login` (
   `telepon` varchar(25) NOT NULL,
   `email` varchar(255) NOT NULL,
   `tgl_bergabung` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `foto` varchar(255) NOT NULL,
+  `verifikasi` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_login`
 --
 
-INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenkel`, `alamat`, `telepon`, `email`, `tgl_bergabung`, `foto`) VALUES
-(5, 'AG003', 'aditiyars', '202cb962ac59075b964b07152d234b70', 'Anggota', 'aditiya ramadhan saputra', '', '2001-11-20', 'Laki-Laki', '0', '0', '', '2023-11-26', ''),
-(6, 'AG006', 'zizi', '202cb962ac59075b964b07152d234b70', 'Petugas', 'M. Rizky Azizi', '', '2002-03-05', 'Laki-Laki', '0', '0', '', '2023-11-26', '');
+INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenkel`, `alamat`, `telepon`, `email`, `tgl_bergabung`, `foto`, `verifikasi`) VALUES
+(5, 'AG003', 'aditiyars', '202cb962ac59075b964b07152d234b70', 'Anggota', 'aditiya ramadhan saputra', '', '2001-11-20', 'Laki-Laki', '0', '0', '', '2023-11-26', '', 1),
+(6, 'AG006', 'zizi', '202cb962ac59075b964b07152d234b70', 'Petugas', 'M. Rizky Azizi', '', '2002-03-05', 'Laki-Laki', '0', '0', '', '2023-11-26', '', 1),
+(9, 'AG007', 'pulupulu', '202cb962ac59075b964b07152d234b70', 'Petugas', 'test', '', '2023-11-01', 'Laki-Laki', '0', '0', '', '2023-11-28', '', 1);
 
 -- --------------------------------------------------------
 
@@ -248,7 +250,7 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_pinjam`
