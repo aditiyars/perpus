@@ -61,6 +61,10 @@
 										<div class="form-group">
 											<a href="<?= base_url();?>" class="btn btn-primary form-control" role="button " >Back to Home</a>
 										</div>
+                                        <p class="form-text">____ Belum menjadi anggota ? ____</p>
+                                        <div class="form-group">
+											<a href="<?= base_url()?>register" class="btn btn-primary form-control" role="button " >Daftar Membership</a>
+										</div>
                                     </form>
                                 </div>
                             </div>

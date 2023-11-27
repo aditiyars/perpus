@@ -8,15 +8,9 @@
         <div class="pull-left image">
           <?php
             $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login='$idbo'")->row();
-            if(isset($d->foto)){
           ?>
           <br/>
-          <img src="<?php echo base_url();?>assets_style/image/<?php echo $d->foto;?>" alt="#" c
-          lass="user-image" style="border:2px solid #fff;height:auto;width:100%;"/>
-          <?php }else{?>
-            <!--<img src="" alt="#" class="user-image" style="border:2px solid #fff;"/>-->
-            <i class="fa fa-user fa-4x" style="color:#fff;"></i>
-          <?php }?>
+          <img src="<?php echo base_url();?>assets_style/image/user-icon.png" alt="#" class="user-image" style="border:2px solid #fff;height:auto;width:100%;border-radius:50%"/>
         </div>
         <div class="pull-left info" style="margin-top: 5px;">
           <p><?php echo $d->nama;?></p>

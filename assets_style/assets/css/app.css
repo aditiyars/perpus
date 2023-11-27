@@ -50,3 +50,10 @@ BCA37F
 .custom-alert.active {
 	transform: translateY(0);
 }
+
+.form-text {
+	/* border: 1px solid black; */
+	color: black;
+	text-align: center;
+	font-size: 13px;
+}
