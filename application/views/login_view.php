@@ -39,11 +39,12 @@
                             <div class="col-lg-6 d-none d-lg-block bg-image">
 							</div>
                             <div class="col-lg-6">
-                                <div class="p-5">
+								<div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Sistem Informasi<br><b>Perpustakaan Daerah</b></h1>
                                     </div>
-                                    <form action="<?= base_url('login/auth');?>" method="POST" class="user">
+                                    <?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan'); $this->session->set_flashdata('pesan', '');}?>
+									<form action="<?= base_url('login/auth');?>" method="POST" class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="user" name="user" required="required"

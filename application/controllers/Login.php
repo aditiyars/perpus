@@ -28,6 +28,9 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('masuk_perpus') == TRUE && $this->session->userdata('verifikasi') == TRUE){
+			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">
+					<p> Anda telah login !</p>
+				</div></div>');
 			$url=base_url('dashboard');
 			redirect($url);
 		}
@@ -56,9 +59,10 @@ class Login extends CI_Controller {
 
             echo '<script>window.location="'.base_url().'dashboard";</script>';
         }else{
-
-            echo '<script>alert("Login Gagal, Periksa Kembali Username dan Password Anda");
-            window.location="'.base_url().'"</script>';
+			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-danger">
+					<p> Periksa kembali username & password anda !</p>
+				</div></div>');
+			redirect(base_url("/login"));
         }
     }
 

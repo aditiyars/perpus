@@ -9,12 +9,24 @@ class Transaksi extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('M_Admin');
 		$this->load->library(array('cart'));
-		if($this->session->userdata('masuk_perpus') != TRUE || $this->session->userdata('verifikasi') != TRUE){
-			$this->session->sess_destroy();
-			$url=base_url('login');
-			redirect($url);
+			if($this->session->userdata('masuk_perpus') != TRUE){
+				$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-danger">
+					<p> Silakan login terlebih dahulu !</p>
+				</div></div>');
+				$url=base_url('login');
+				redirect($url);
+			}
+
+			if($this->session->userdata('verifikasi') != TRUE){
+				$this->session->sess_destroy();
+				$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">
+						<p> Akun anda belum diverifikasi !</p>
+					</div></div>');
+				$url=base_url('login');
+				redirect($url);
+			}
 		}
-	 }
+	 
 	 
 	/**
 	 * Index Page for this controller.

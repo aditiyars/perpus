@@ -15,6 +15,7 @@
     </section>
     <!-- Main content -->
       <section class="content">
+			<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');$this->session->set_flashdata('pesan', '');}?>
             <!-- Small boxes (Stat box) -->
             <div class="row">
               <div class="col-sm-12">

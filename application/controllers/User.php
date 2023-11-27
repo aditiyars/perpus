@@ -3,13 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 	function __construct(){
-	 parent::__construct();
-	 	//validasi jika user belum login
-     $this->data['CI'] =& get_instance();
-     $this->load->helper(array('form', 'url'));
-     $this->load->model('M_Admin');
-		if($this->session->userdata('masuk_perpus') != TRUE || $this->session->userdata('verifikasi') != TRUE){
+		parent::__construct();
+			//validasi jika user belum login
+		$this->data['CI'] =& get_instance();
+		$this->load->helper(array('form', 'url'));
+		$this->load->model('M_Admin');
+		if($this->session->userdata('masuk_perpus') != TRUE){
+			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-danger">
+				<p> Silakan login terlebih dahulu !</p>
+			</div></div>');
+			$url=base_url('login');
+			redirect($url);
+		}
+
+		if($this->session->userdata('verifikasi') != TRUE){
 			$this->session->sess_destroy();
+			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">
+					<p> Akun anda belum diverifikasi !</p>
+				</div></div>');
 			$url=base_url('login');
 			redirect($url);
 		}

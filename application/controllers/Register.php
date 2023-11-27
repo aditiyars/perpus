@@ -28,6 +28,9 @@ class Register extends CI_Controller {
 	public function index()
 	{	
 		if($this->session->userdata('masuk_perpus') == TRUE){
+			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-warning">
+					<p> Anda telah login !</p>
+				</div></div>');
 			$url=base_url('dashboard');
 			redirect($url);
 		}
