@@ -56,35 +56,36 @@ class Register extends CI_Controller {
       // setting konfigurasi upload
       $nmfile = "user_".time();
       $config['upload_path'] = './assets_style/image/';
-      $config['allowed_types'] = 'gif|jpg|jpeg|png';
+      $config['allowed_types'] = 'jpg|jpeg|png';
       $config['file_name'] = $nmfile;
       // load library upload
       $this->load->library('upload', $config);
       // upload gambar 1
-      $this->upload->do_upload('gambar');
-      $result1 = $this->upload->data();
-      $result = array('gambar'=>$result1);
-      $data1 = array('upload_data' => $this->upload->data());
-      $data = array(
-          'anggota_id' => $id,
-          'nama'=>$nama,
-          'user'=>$user,
-          'pass'=>$pass,
-          'level'=>$level,
-          'tgl_lahir'=>$_POST['birth'],
-          'level'=>$level,
-          'telepon'=>$telepon,
-          'jenkel'=>$jenkel,
-          'alamat'=>$alamat,
-          'tgl_bergabung'=>date('Y-m-d'),
-          'foto'=>$data1['upload_data']['file_name']
-      );
-      $this->db->insert('tbl_login',$data);
-
-      $this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-success">
-      <p> Daftar User telah berhasil !</p>
-      </div></div>');
-      redirect(base_url('login'));
+      if(!$this->upload->do_upload('gambar')) {
+        echo $this->upload->display_errors();
+      } else {
+        $uploaded_data = $this->upload->data();
+        $data = array(
+            'anggota_id' => $id,
+            'nama'=>$nama,
+            'user'=>$user,
+            'pass'=>$pass,
+            'level'=>$level,
+            'tgl_lahir'=>$_POST['birth'],
+            'level'=>$level,
+            'telepon'=>$telepon,
+            'jenkel'=>$jenkel,
+            'alamat'=>$alamat,
+            'tgl_bergabung'=>date('Y-m-d'),
+            'foto'=>$uploaded_data['file_name']
+        );
+        $this->db->insert('tbl_login',$data);
+  
+        $this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-success">
+        <p> Daftar User telah berhasil !</p>
+        </div></div>');
+        redirect(base_url('login'));
+      }
     }
 
   }

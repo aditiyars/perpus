@@ -89,8 +89,8 @@
                                             <textarea class="form-control" name="address" id="address" placeholder="Masukkan Alamat"></textarea>
                                         </div>
                                         <div class="form-group">
-                                          <label for="paymentCheck">Bukti Bayar Pendaftaran</label>
-                                          <input type="file" name="paymentCheck" class="form-control" accept="image/jpg, image/jpeg, image/png">
+                                          <label for="gambar">Bukti Bayar Pendaftaran</label>
+                                          <input type="file" name="gambar" class="form-control" accept="image/jpg, image/jpeg, image/png">
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-primary bg-color-four btn-user btn-block " type="submit">
