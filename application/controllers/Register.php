@@ -62,14 +62,15 @@ class Register extends CI_Controller {
     {
       // setting konfigurasi upload
       $nmfile = "user_".time();
-      $config['upload_path'] = './assets_style/image/';
+      $config['upload_path'] = './assets_style/image/paymentCheck';
       $config['allowed_types'] = 'jpg|jpeg|png';
       $config['file_name'] = $nmfile;
       // load library upload
       $this->load->library('upload', $config);
       // upload gambar 1
       if(!$this->upload->do_upload('gambar')) {
-        echo $this->upload->display_errors();
+			  $this->session->set_flashdata('pesan','upload failed');
+        redirect(base_url('register'));
       } else {
         $uploaded_data = $this->upload->data();
         $data = array(

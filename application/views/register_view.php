@@ -27,7 +27,11 @@
 
     <?php if($this->session->flashdata('pesan')): ?>
       <div class="custom-alert active">
-        <span>Username telah dipakai</span>
+        <?php if($this->session->flashdata('pesan') === 'username taken') : ?>
+            <span>Username sudah pernah digunakan</span>
+        <?php elseif($this->session->flashdata('pesan') === 'upload failed') : ?>
+            <span>Gagal upload gambar ! Tipe file gambar tidak diizinkan.</span>
+        <?php endif; ?>
       </div>
     <?php endif; ?>
 

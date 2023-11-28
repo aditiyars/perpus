@@ -67,6 +67,15 @@
                                     <textarea class="form-control" name="alamat"  required="required"><?= $user->alamat;?></textarea>
                                     <input type="hidden" class="form-control" value="<?= $user->id_login;?>" name="id_login">
                                 </div>
+                                <?php if($user->foto) : ?>
+                                    <div class="form-group">
+                                        <label>Bukti Pembayaran Pendaftaran</label>
+                                        <div style="display:flex;flex-direction:column;gap:10px;">
+                                            <img src="<?= base_url('assets_style/image/paymentCheck/'. $user->foto) ?>" alt="payment check" class="img-responsive" style="width:200px; height:200px">
+                                            <a href="<?= base_url('assets_style/image/paymentCheck/'. $user->foto) ?>" class="btn btn-success mt-4" style="width:fit-content" download>Download bukti pembayaran</a>
+                                        </div>
+                                    </div>
+                                <?php endif ?>
                             </div>
                         </div>
                         <div class="pull-right">

@@ -129,7 +129,7 @@ error_reporting(0);
 							</div>
 							<div class="col-sm-4 text-center">
 								<center>
-									<img src="<?php echo base_url();?>assets_style/image/<?php echo $user->foto;?>" style="width:3cm;height:4cm;" class="img-responsive">
+									<img src="<?php echo base_url();?>assets_style/image/user-icon.png" style="width:4cm;height:4cm;border:1px solid;" class="img-responsive">
 								</center>
 							</div>
 						</div>

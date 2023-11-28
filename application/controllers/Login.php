@@ -50,14 +50,23 @@ class Login extends CI_Controller {
         {
             $hasil_login = $proses_login->row_array();
 
-            // create session
-            $this->session->set_userdata('masuk_perpus',TRUE);
-            $this->session->set_userdata('level',$hasil_login['level']);
-            $this->session->set_userdata('ses_id',$hasil_login['id_login']);
-            $this->session->set_userdata('anggota_id',$hasil_login['anggota_id']);
-            $this->session->set_userdata('verifikasi',$hasil_login['verifikasi']);
+						if($hasil_login['verifikasi']) {
+							// create session
+							$this->session->set_userdata('masuk_perpus',TRUE);
+							$this->session->set_userdata('level',$hasil_login['level']);
+							$this->session->set_userdata('ses_id',$hasil_login['id_login']);
+							$this->session->set_userdata('anggota_id',$hasil_login['anggota_id']);
+							$this->session->set_userdata('verifikasi',$hasil_login['verifikasi']);
+	
+							echo '<script>window.location="'.base_url().'dashboard";</script>';
+						}
+						else {
+							$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-danger">
+									<p>Akun anda belum diverifikasi !</p>
+								</div></div>');
+							redirect(base_url("/login"));
+						}
 
-            echo '<script>window.location="'.base_url().'dashboard";</script>';
         }else{
 			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-danger">
 					<p> Periksa kembali username & password anda !</p>

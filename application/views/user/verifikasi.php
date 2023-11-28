@@ -19,7 +19,7 @@
 			    <div class="box-body">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<img class="rounded mx-auto d-block" src="<?= base_url("/assets_style/image/").$user[0]['foto']?>" alt="Card image cap" style="height:500px;">
+							<img class="rounded mx-auto d-block" src="<?= base_url("/assets_style/image/paymentCheck/").$user[0]['foto']?>" alt="Card image cap" style="height:500px;">
 						</div>
 					</div>
 					<div class="pull-right">
